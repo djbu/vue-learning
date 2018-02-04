@@ -11,7 +11,9 @@
 <div id="app">
   <button v-on:click="increase(2, $event)">Increase</button>
 	<p>{{ counter }}</p>
-  <p v-on:mousemove="updateCoordinates">{{ x }} / {{ y }}</p>
+  <p v-on:mousemove="updateCoordinates">{{ x }} / {{ y }}
+		- <span v-on:mousemove="dummy">dead spot</span>
+	</p>
 </div>
 <script>
 	new Vue({
@@ -25,6 +27,9 @@
   	increase: function(step, event) {
     	this.counter += step;
     },
+		dummy: function(event) {
+			event.stopPropagation();
+		},
 		updateCoordinates: function(event) {
 			this.x = event.clientX;
 			this.y = event.clientY;
