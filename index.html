@@ -9,25 +9,17 @@
 </head>
 <body>
 <div id="app">
-	<div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
-	<div class="demo"></div>
-	<div class="demo"></div>
+	<p v-if="show">You can see me!</p>
+	<p v-else>You can also see me?</p>
+	<p>You can also see me?</p>
+	<button @click="show = !show">Switch</button>
 </div>
 <script>
 	new Vue({
 	el: '#app',
 	data: {
-		attachRed: false
-	},
-	computed: {
-		divClasses: function() {
-			return {
-				red: this.attachRed,
-				blue: !this.attachRed
-			};
-		}
-	}
- 
+		show: true
+	} 
 });
 </script>
 </body>
