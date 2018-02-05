@@ -9,32 +9,14 @@
 </head>
 <body>
 <div id="app">
-  <button v-on:click="increase(2, $event)">Increase</button>
-	<p>{{ counter > 10 ? 'mayor a diez' : 'menor o igual a 10' }}</p>
-  <p v-on:mousemove="updateCoordinates">{{ x }} / {{ y }}
-		- <span v-on:mousemove.stop="">dead spot</span>
-	</p>
-	<input type="text" v-on:keyup.enter="alertMe">
+	<input type="text" v-model="name">
+	<p>{{ name }}</p>
 </div>
 <script>
 	new Vue({
 	el: '#app',
   data: {
-  	counter: 0,
-		x: 0,
-		y: 0
-  },
-  methods: {
-  	increase: function(step, event) {
-    	this.counter += step;
-    },
-		alertMe: function() {
-			alert('alerta');
-		},
-		updateCoordinates: function(event) {
-			this.x = event.clientX;
-			this.y = event.clientY;
-		}
+  	name: 'Max'
   }
 });
 </script>
