@@ -14,6 +14,7 @@
   <p v-on:mousemove="updateCoordinates">{{ x }} / {{ y }}
 		- <span v-on:mousemove.stop="">dead spot</span>
 	</p>
+	<input type="text" v-on:keyup.enter="alertMe">
 </div>
 <script>
 	new Vue({
@@ -27,6 +28,9 @@
   	increase: function(step, event) {
     	this.counter += step;
     },
+		alertMe: function() {
+			alert('alerta');
+		},
 		updateCoordinates: function(event) {
 			this.x = event.clientX;
 			this.y = event.clientY;
