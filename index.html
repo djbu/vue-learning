@@ -9,8 +9,9 @@
 </head>
 <body>
 <div id="app">
-	<button v-on:click="increase">Incrementa</button>
-	<button v-on:click="increaseSecond">Incrementa segundo</button>
+	<button @click="increase">Incrementa</button>
+	<button @click="increaseSecond">Incrementa segundo</button>
+	<a :href="link" >Link</a>
 	<p>{{ counter }}</p>
 	<p>{{ secondCounter }}</p>
 	<p>{{ output }}</p>
@@ -20,7 +21,8 @@
 	el: '#app',
   data: {
   	counter: 0,
-		secondCounter: 0
+		secondCounter: 0,
+		link: 'http://google.com'
   },
 	watch: {
 		counter: function(value) {
