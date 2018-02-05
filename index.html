@@ -9,15 +9,34 @@
 </head>
 <body>
 <div id="app">
-	<input type="text" v-model="name">
-	<p>{{ name }}</p>
+	<button v-on:click="increase">Incrementa</button>
+	<button v-on:click="increaseSecond">Incrementa segundo</button>
+	<p>{{ counter }}</p>
+	<p>{{ secondCounter }}</p>
+	<p>{{ output }}</p>
 </div>
 <script>
 	new Vue({
 	el: '#app',
   data: {
-  	name: 'Max'
-  }
+  	counter: 0,
+		secondCounter: 0
+  },
+	methods: {
+		increase: function() {
+			this.counter++;
+		},
+		increaseSecond: function() {
+			this.secondCounter++;
+		}
+	},
+	computed: {
+		output: function() {
+			console.log('solo se activa con counter');
+			return this.counter > 10 ? 'mayor que 10' 
+			: 'menor o igual a 10';
+		}
+	}
 });
 </script>
 </body>
