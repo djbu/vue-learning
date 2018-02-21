@@ -9,17 +9,19 @@
 </head>
 <body>
 <div id="app">
-	<div v-show="show">
-		<p >You can see me!</p>		
-		<p>You can also see me?</p>
-	</div> 
-	<button @click="show = !show">Switch</button>
+	<ul>
+		<li v-for="ingredient in ingredients">{{ ingredient }}</li>
+	</ul>
 </div>
 <script>
 	new Vue({
 	el: '#app',
 	data: {
-		show: true
+		ingredients: ['carne', 'pollo', 'pescado'],
+		persons: [
+			{name: 'maria', age: 27, color: 'black'},
+			{name: 'daniel', age: 26, color: 'white'}
+		]
 	} 
 });
 </script>
