@@ -10,15 +10,9 @@
 <body>
 <div id="app">
 	<ul>
-		<li v-for="person in persons">{{ person.name }}</li>
+		<li v-for="ingredient in ingredients">{{ ingredient }}</li>
 	</ul>
-	
-	<ul>
-		<li v-for="person in persons">
-			<div v-for="(value, key, index) in person">{{ key }}: {{ value }}, #{{ index }}</div>
-		</li>
-	</ul>
-	<span v-for="n in 10">{{ n }}</span>
+	<button @click="ingredients.push('spices')">Add New</button>	
 </div>
 <script>
 	new Vue({
