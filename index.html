@@ -9,11 +9,15 @@
 </head>
 <body>
 <div id="app">
-	<template v-for="(ingredient, index) in ingredients">
-		<h1>{{ ingredient}}</h1>
-		<p>{{ index }}</p>
-	</template>
+	<ul>
+		<li v-for="person in persons">{{ person.name }}</li>
+	</ul>
 	
+	<ul>
+		<li v-for="person in persons">
+			<div v-for="(value, key) in person">{{ value }}: {{ key }}</div>
+		</li>
+	</ul>
 </div>
 <script>
 	new Vue({
